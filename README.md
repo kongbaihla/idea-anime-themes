@@ -42,51 +42,11 @@
 单套界面模拟：`ui_preview_*.png`；汇总图：`ui_preview.png`。
 另有一份可交互的 `preview.html`。
 
-## 装哪个？——先弄清 `.icls` 的边界
-
-**`.icls` 只能改编辑器**：代码高亮、行号、光标行、控制台、diff、搜索结果。
-项目树、标签页、工具栏、状态栏、运行窗口、滚动条、图标这些属于**界面主题**，`.icls` 碰不到。
-只装 `.icls` 会感觉「只有编辑器和控制台变了」，这不是没生效，是它的能力边界。
-
-| 想要的效果 | 装什么 |
-|---|---|
-| 只换代码配色 | 4 个 `.icls` 放进配置目录的 `colors\` |
-| 连 IDE 框架一起换 | `dist\AnimeIDEAThemes.jar`（内含 4 套 UI 主题 + 4 套配色方案） |
-
-## 安装 A：只用编辑器配色
-
-把 `.icls` 复制到对应 IDE 配置目录下的 `colors\` 子目录（不存在就新建），重启 IDE：
-
-```bash
-mkdir -p "/c/Users/kb/AppData/Roaming/JetBrains/IdeaIC2025.2/colors"
-cp *.icls "/c/Users/kb/AppData/Roaming/JetBrains/IdeaIC2025.2/colors/"
-```
-
-然后 `Settings → Editor → Color Scheme` 选一套。
-
-## 安装 B：界面主题插件（推荐）
-
-1. `Settings → Plugins → ⚙ → Install Plugin from Disk…` → 选 `dist\AnimeIDEAThemes.jar`
-2. **重启 IDE**
-3. `Settings → Appearance & Behavior → Appearance → Theme` 里选四套之一
-
-本机已装好一份，位置 `%APPDATA%\JetBrains\IdeaIC2025.2\plugins\AnimeIDEAThemes\lib\`，
-校验值与下方表格一致，重启后即可在主题列表看到。
-
-**插件没有签名**，IDEA 可能提示未签名。jar 里**没有一行可执行代码**（只有 JSON、XML 和一个
-SVG 图标），继续即可。
-
-**如果编辑器配色没跟着变**：到 `Settings → Editor → Color Scheme` 手动选同名方案——
-4 套配色也打包在插件里，会出现在下拉列表（显示为只读的内置方案）。
-
-### 为什么第一版 jar 装不上
-
-`META-INF/MANIFEST.MF` 缺失。IDEA 对没有清单文件的 jar 直接判定「不是有效插件」。
-另外两处也与能装的插件不一致：`.theme.json` 与配色文件我放进了 `themes\`、`colors\` 子目录，
-而能用的插件都放在 **jar 根目录**（`editorScheme` 写作 `/_名字_.xml`）。
-现在三处都对齐了，`themes.py` 的 `verify_jar()` 会校验清单存在且以 `Manifest-Version: 1.0` +
-CRLF 开头、`plugin.xml` 是合法 XML、每个 `themeProvider` 的 `path` 与每个 `editorScheme`
-都能在 jar 内解析到、`dark` 与 `parentTheme` 一致。
+##如何安装:
+1.在设置界面选择插件。
+2.点击插件中的设置按钮，在弹出的菜单中选择从磁盘安装插件。
+3.选择.jar单击打开即可。
+<img width="1479" height="1077" alt="屏幕截图 2026-09-23 005636" src="https://github.com/user-attachments/assets/bb1e5d8a-dd33-4ffd-8230-2a02240db3d4" />
 
 ## 内容规模
 
