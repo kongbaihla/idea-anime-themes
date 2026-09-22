@@ -1,7 +1,7 @@
 # IntelliJ IDEA 主题 × 4（时崎狂三 / 初音未来）
 
 从两张动漫原图的实测像素提取配色，做成四套 IntelliJ IDEA 主题。IDE 框架与编辑器配色都包含，
-选中一套即整套生效。Blender 版本是独立仓库 `blender-anime-themes`（本机与
+选中一套即整套生效。Blender 版本是独立仓库 `blender-anime-themes`（与
 `../blender-anime-themes/` 并列）——两边共用同一套角色色值，Blender 文本编辑器的
 **8 个语法高亮属性与本配色方案逐字节一致**，由 `extract_palettes.py` 把调色板提取过去。
 
