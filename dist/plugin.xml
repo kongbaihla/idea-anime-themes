@@ -1,0 +1,22 @@
+<idea-plugin>
+  <id>com.kb.anime.idea.themes</id>
+  <name>Anime Themes - Kurumi &amp; Miku</name>
+  <version>1.0.0</version>
+  <category>UI</category>
+  <vendor>kb</vendor>
+  <description><![CDATA[
+    四个 IntelliJ IDEA 主题，配色取自两张动漫原图（时崎狂三 / 初音未来），
+    每张各出浅色与深色一版：界面主题（面板、工具窗、标签页、工具栏、状态栏、
+    弹窗、滚动条）+ 配套编辑器配色方案，选中一个主题即整套生效。<br/>
+    Four IntelliJ IDEA themes (Kurumi Tokisaki / Hatsune Miku, light + dark each).
+    Each carries a matching editor colour scheme via <code>editorScheme</code>.
+  ]]></description>
+  <idea-version since-build="243"/>
+  <depends>com.intellij.modules.platform</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <themeProvider id="com.kb.anime.idea.themes.kurumi.tokisaki.dark" path="/KurumiTokisaki_Dark.theme.json"/>
+    <themeProvider id="com.kb.anime.idea.themes.kurumi.tokisaki.light" path="/KurumiTokisaki_Light.theme.json"/>
+    <themeProvider id="com.kb.anime.idea.themes.hatsune.miku.dark" path="/HatsuneMiku_Dark.theme.json"/>
+    <themeProvider id="com.kb.anime.idea.themes.hatsune.miku.light" path="/HatsuneMiku_Light.theme.json"/>
+  </extensions>
+</idea-plugin>

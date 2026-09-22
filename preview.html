@@ -1,0 +1,628 @@
+<!doctype html><meta charset="utf-8">
+<title>IDEA themes preview</title>
+<style>
+ body{margin:0;background:#202225;color:#ddd;
+      font:14px/1.5 "Segoe UI",system-ui,sans-serif;padding:28px}
+ h2{font-weight:600;margin:34px 0 10px;font-size:16px}
+ .panel{border-radius:10px;overflow:hidden;border:1px solid #3a3d42}
+ pre{margin:0;padding:16px 20px 16px 0;font:15px/1.65 Consolas,"Cascadia Mono",monospace;
+     white-space:pre;overflow-x:auto}
+ .ln{display:inline-block;width:48px;text-align:right;margin-right:18px;
+     user-select:none;opacity:.75}
+ .sw{display:flex;flex-wrap:wrap;gap:14px;padding:12px 20px;border-top:1px solid rgba(128,128,128,.25);
+     font:13px Consolas,monospace}
+ em{font-style:italic} b{font-weight:700}
+ .wavy{text-decoration:underline wavy;text-underline-offset:3px}
+</style>
+<h2>Kurumi Tokisaki Light &nbsp;<code>bg #FBF9F7</code> <span style="opacity:.6">parent Default</span></h2>
+<div class="panel" style="background:#FBF9F7"><pre>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#908a95">1</span>
+<span style="color:#817B87;font-style:italic">/**</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#908a95">2</span>
+<span style="color:#817B87;font-style:italic"> * </span>
+<span style="color:#817B87;font-style:italic">Model of the ice queen.</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#908a95">3</span>
+<span style="color:#817B87;font-style:italic"> * </span>
+<span style="color:#8C6414;font-weight:700">@param</span>
+<span style="color:#817B87;font-style:italic"> name the character name</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#908a95">4</span>
+<span style="color:#817B87;font-style:italic"> */</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#908a95">5</span>
+<span style="color:#AC601C">@Serializable</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#908a95">6</span>
+<span style="color:#8C6414;font-weight:700">data class </span>
+<span style="color:#2B2933;font-weight:700">SnowMiku</span>
+<span style="color:#6A646C">(</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#908a95">7</span>
+<span style="color:#8C6414;font-weight:700">    val </span>
+<span style="color:#35323C">name</span>
+<span style="color:#6A646C">: </span>
+<span style="color:#2B2933;font-weight:700">String</span>
+<span style="color:#6A646C"> = </span>
+<span style="color:#B03A22">"Hatsune Miku"</span>
+<span style="color:#6A646C">,</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#908a95">8</span>
+<span style="color:#8C6414;font-weight:700">    val </span>
+<span style="color:#35323C">age</span>
+<span style="color:#6A646C">: </span>
+<span style="color:#2B2933;font-weight:700">Int</span>
+<span style="color:#6A646C"> = </span>
+<span style="color:#982850">16</span>
+<span style="color:#6A646C">,</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#908a95">9</span>
+<span style="color:#8C6414;font-weight:700">    private var </span>
+<span style="color:#7A2E4A;font-style:italic">frozen</span>
+<span style="color:#6A646C">: </span>
+<span style="color:#2B2933;font-weight:700">Boolean</span>
+<span style="color:#6A646C"> = </span>
+<span style="color:#8C6414;font-weight:700">false</span>
+<span style="color:#6A646C">,</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#908a95">10</span>
+<span style="color:#6A646C">) {</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#908a95">11</span>
+<span style="color:#6e7580;font-style:italic">    // freeze the whole ocean</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#908a95">12</span>
+<span style="color:#8C6414;font-weight:700">    fun </span>
+<span style="color:#7A2E4A">freeze</span>
+<span style="color:#6A646C">(</span>
+<span style="color:#4A4650">level</span>
+<span style="color:#6A646C">: </span>
+<span style="color:#2B2933;font-weight:700">Int</span>
+<span style="color:#6A646C"> = </span>
+<span style="color:#982850">3</span>
+<span style="color:#6A646C">)</span>
+<span style="color:#6A646C">: </span>
+<span style="color:#2B2933;font-weight:700">Result</span>
+<span style="color:#6A646C">&lt;</span>
+<span style="color:#2B2933;font-weight:700">List</span>
+<span style="color:#6A646C">&lt;</span>
+<span style="color:#2B2933;font-weight:700">Ice</span>
+<span style="color:#6A646C">&gt;&gt;</span>
+<span style="color:#6A646C"> {</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#908a95">13</span>
+<span style="color:#2B2933;background:#FBF9F7">        </span>
+<span style="color:#7A2E4A">println</span>
+<span style="color:#6A646C">(</span>
+<span style="color:#B03A22">"[debug] level=</span>
+<span style="color:#AC601C">$level</span>
+<span style="color:#B03A22">"</span>
+<span style="color:#6A646C">)</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#908a95">14</span>
+<span style="color:#8C6414;font-weight:700">        return </span>
+<span style="color:#35323C">world</span>
+<span style="color:#6A646C">.</span>
+<span style="color:#7A2E4A">apply</span>
+<span style="color:#6A646C"> { </span>
+<span style="color:#4A4650">temperature</span>
+<span style="color:#6A646C"> -= </span>
+<span style="color:#982850">40</span>
+<span style="color:#6A646C"> }</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#908a95">15</span>
+<span style="color:#6A646C">    }</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#908a95">16</span>
+<span style="color:#6A646C">}</span>
+</div>
+<div style="background:#F4F0EE;margin:0 -20px 0 0"><span class="ln" style="color:#8C6414">17</span>
+<span style="color:#8C6414;font-weight:700">    val </span>
+<span style="color:#E5112C;font-weight:700" class="wavy">temperture</span>
+<span style="color:#6A646C"> = </span>
+<span style="color:#35323C">world</span>
+<span style="color:#6A646C">.</span>
+<span style="color:#4A4650">temperature</span>
+<span style="color:#6e7580;font-style:italic">   // typo -&gt; error</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#908a95">18</span>
+<span style="color:#8C6414;font-weight:700">    val </span>
+<span style="color:#A96200" class="wavy">magic</span>
+<span style="color:#6A646C"> = </span>
+<span style="color:#982850">42</span>
+<span style="color:#6e7580;font-style:italic">   // magic number -&gt; warning</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#908a95">19</span>
+<span style="color:#8C6414;font-weight:700">    val </span>
+<span style="background:#F0C86A;color:#2B2933">search</span>
+<span style="color:#6A646C"> = </span>
+<span style="color:#B03A22">"hit"</span>
+<span style="color:#6e7580;font-style:italic">   // search match highlight</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#908a95">20</span>
+<span style="color:#8C6414;font-weight:700">    val </span>
+<span style="background:#F6D9D4">picked</span>
+<span style="color:#6A646C"> = </span>
+<span style="color:#982850">1.5</span>
+<span style="color:#6e7580;font-style:italic">   // selection</span>
+</div>
+</pre>
+<div class="sw">
+<span style="color:#8C6414;font-weight:700">keyword</span>
+<span style="color:#B03A22">string</span>
+<span style="color:#982850">number</span>
+<span style="color:#982850">constant</span>
+<span style="color:#7A2E4A">function</span>
+<span style="color:#2B2933;font-weight:700">class_name</span>
+<span style="color:#AC601C">annotation</span>
+<span style="color:#35323C">local</span>
+<span style="color:#4A4650">parameter</span>
+<span style="color:#6e7580;font-style:italic">comment</span>
+<span style="color:#817B87;font-style:italic">doc</span>
+<span style="color:#E5112C;font-weight:700">error</span>
+<span style="color:#A96200">warning</span>
+<span style="color:#6C747D">inlay</span>
+<span style="color:#982850;font-weight:700">todo</span>
+<span style="color:#7A2E4A">link</span>
+<span style="color:#6A646C">operator</span>
+</div></div>
+<h2>Kurumi Tokisaki Dark &nbsp;<code>bg #1E1C22</code> <span style="opacity:.6">parent Darcula</span></h2>
+<div class="panel" style="background:#1E1C22"><pre>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#6e6a7a">1</span>
+<span style="color:#7C7887;font-style:italic">/**</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#6e6a7a">2</span>
+<span style="color:#7C7887;font-style:italic"> * </span>
+<span style="color:#7C7887;font-style:italic">Model of the ice queen.</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#6e6a7a">3</span>
+<span style="color:#7C7887;font-style:italic"> * </span>
+<span style="color:#E0A838;font-weight:700">@param</span>
+<span style="color:#7C7887;font-style:italic"> name the character name</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#6e6a7a">4</span>
+<span style="color:#7C7887;font-style:italic"> */</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#6e6a7a">5</span>
+<span style="color:#C76581">@Serializable</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#6e6a7a">6</span>
+<span style="color:#E0A838;font-weight:700">data class </span>
+<span style="color:#C2D8F2;font-weight:700">SnowMiku</span>
+<span style="color:#8E8A98">(</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#6e6a7a">7</span>
+<span style="color:#E0A838;font-weight:700">    val </span>
+<span style="color:#C8C4CE">name</span>
+<span style="color:#8E8A98">: </span>
+<span style="color:#C2D8F2;font-weight:700">String</span>
+<span style="color:#8E8A98"> = </span>
+<span style="color:#E8604F">"Hatsune Miku"</span>
+<span style="color:#8E8A98">,</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#6e6a7a">8</span>
+<span style="color:#E0A838;font-weight:700">    val </span>
+<span style="color:#C8C4CE">age</span>
+<span style="color:#8E8A98">: </span>
+<span style="color:#C2D8F2;font-weight:700">Int</span>
+<span style="color:#8E8A98"> = </span>
+<span style="color:#E8C870">16</span>
+<span style="color:#8E8A98">,</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#6e6a7a">9</span>
+<span style="color:#E0A838;font-weight:700">    private var </span>
+<span style="color:#F0A878;font-style:italic">frozen</span>
+<span style="color:#8E8A98">: </span>
+<span style="color:#C2D8F2;font-weight:700">Boolean</span>
+<span style="color:#8E8A98"> = </span>
+<span style="color:#E0A838;font-weight:700">false</span>
+<span style="color:#8E8A98">,</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#6e6a7a">10</span>
+<span style="color:#8E8A98">) {</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#6e6a7a">11</span>
+<span style="color:#8E959E;font-style:italic">    // freeze the whole ocean</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#6e6a7a">12</span>
+<span style="color:#E0A838;font-weight:700">    fun </span>
+<span style="color:#F0A878">freeze</span>
+<span style="color:#8E8A98">(</span>
+<span style="color:#A8A4B2">level</span>
+<span style="color:#8E8A98">: </span>
+<span style="color:#C2D8F2;font-weight:700">Int</span>
+<span style="color:#8E8A98"> = </span>
+<span style="color:#E8C870">3</span>
+<span style="color:#8E8A98">)</span>
+<span style="color:#8E8A98">: </span>
+<span style="color:#C2D8F2;font-weight:700">Result</span>
+<span style="color:#8E8A98">&lt;</span>
+<span style="color:#C2D8F2;font-weight:700">List</span>
+<span style="color:#8E8A98">&lt;</span>
+<span style="color:#C2D8F2;font-weight:700">Ice</span>
+<span style="color:#8E8A98">&gt;&gt;</span>
+<span style="color:#8E8A98"> {</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#6e6a7a">13</span>
+<span style="color:#D8D4DE;background:#1E1C22">        </span>
+<span style="color:#F0A878">println</span>
+<span style="color:#8E8A98">(</span>
+<span style="color:#E8604F">"[debug] level=</span>
+<span style="color:#F0A878">$level</span>
+<span style="color:#E8604F">"</span>
+<span style="color:#8E8A98">)</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#6e6a7a">14</span>
+<span style="color:#E0A838;font-weight:700">        return </span>
+<span style="color:#C8C4CE">world</span>
+<span style="color:#8E8A98">.</span>
+<span style="color:#F0A878">apply</span>
+<span style="color:#8E8A98"> { </span>
+<span style="color:#C8C4CE">temperature</span>
+<span style="color:#8E8A98"> -= </span>
+<span style="color:#E8C870">40</span>
+<span style="color:#8E8A98"> }</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#6e6a7a">15</span>
+<span style="color:#8E8A98">    }</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#6e6a7a">16</span>
+<span style="color:#8E8A98">}</span>
+</div>
+<div style="background:#282530;margin:0 -20px 0 0"><span class="ln" style="color:#E0A838">17</span>
+<span style="color:#E0A838;font-weight:700">    val </span>
+<span style="color:#FF4D4D;font-weight:700" class="wavy">temperture</span>
+<span style="color:#8E8A98"> = </span>
+<span style="color:#C8C4CE">world</span>
+<span style="color:#8E8A98">.</span>
+<span style="color:#C8C4CE">temperature</span>
+<span style="color:#8E959E;font-style:italic">   // typo -&gt; error</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#6e6a7a">18</span>
+<span style="color:#E0A838;font-weight:700">    val </span>
+<span style="color:#D8D4DE" class="wavy">magic</span>
+<span style="color:#8E8A98"> = </span>
+<span style="color:#E8C870">42</span>
+<span style="color:#8E959E;font-style:italic">   // magic number -&gt; warning</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#6e6a7a">19</span>
+<span style="color:#E0A838;font-weight:700">    val </span>
+<span style="background:#C9A227;color:#2A2530">search</span>
+<span style="color:#8E8A98"> = </span>
+<span style="color:#E8604F">"hit"</span>
+<span style="color:#8E959E;font-style:italic">   // search match highlight</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#6e6a7a">20</span>
+<span style="color:#E0A838;font-weight:700">    val </span>
+<span style="background:#4A2430">picked</span>
+<span style="color:#8E8A98"> = </span>
+<span style="color:#E8C870">1.5</span>
+<span style="color:#8E959E;font-style:italic">   // selection</span>
+</div>
+</pre>
+<div class="sw">
+<span style="color:#E0A838;font-weight:700">keyword</span>
+<span style="color:#E8604F">string</span>
+<span style="color:#E8C870">number</span>
+<span style="color:#E8C870">constant</span>
+<span style="color:#F0A878">function</span>
+<span style="color:#C2D8F2;font-weight:700">class_name</span>
+<span style="color:#C76581">annotation</span>
+<span style="color:#C8C4CE">local</span>
+<span style="color:#A8A4B2">parameter</span>
+<span style="color:#8E959E;font-style:italic">comment</span>
+<span style="color:#7C7887;font-style:italic">doc</span>
+<span style="color:#FF4D4D;font-weight:700">error</span>
+<span style="color:#D8D4DE">warning</span>
+<span style="color:#8E8A98">inlay</span>
+<span style="color:#c76581;font-weight:700">todo</span>
+<span style="color:#7AB8E8">link</span>
+<span style="color:#8E8A98">operator</span>
+</div></div>
+<h2>Hatsune Miku Light &nbsp;<code>bg #FBF7FA</code> <span style="opacity:.6">parent Default</span></h2>
+<div class="panel" style="background:#FBF7FA"><pre>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#708fa3">1</span>
+<span style="color:#4F7A99;font-style:italic">/**</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#708fa3">2</span>
+<span style="color:#4F7A99;font-style:italic"> * </span>
+<span style="color:#4F7A99;font-style:italic">Model of the ice queen.</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#708fa3">3</span>
+<span style="color:#4F7A99;font-style:italic"> * </span>
+<span style="color:#0777BF;font-weight:700">@param</span>
+<span style="color:#4F7A99;font-style:italic"> name the character name</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#708fa3">4</span>
+<span style="color:#4F7A99;font-style:italic"> */</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#708fa3">5</span>
+<span style="color:#AD5776">@Serializable</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#708fa3">6</span>
+<span style="color:#0777BF;font-weight:700">data class </span>
+<span style="color:#0B3F63;font-weight:700">SnowMiku</span>
+<span style="color:#5C7681">(</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#708fa3">7</span>
+<span style="color:#0777BF;font-weight:700">    val </span>
+<span style="color:#33505F">name</span>
+<span style="color:#5C7681">: </span>
+<span style="color:#0B3F63;font-weight:700">String</span>
+<span style="color:#5C7681"> = </span>
+<span style="color:#1D8169">"Hatsune Miku"</span>
+<span style="color:#5C7681">,</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#708fa3">8</span>
+<span style="color:#0777BF;font-weight:700">    val </span>
+<span style="color:#33505F">age</span>
+<span style="color:#5C7681">: </span>
+<span style="color:#0B3F63;font-weight:700">Int</span>
+<span style="color:#5C7681"> = </span>
+<span style="color:#B2593B">16</span>
+<span style="color:#5C7681">,</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#708fa3">9</span>
+<span style="color:#0777BF;font-weight:700">    private var </span>
+<span style="color:#005EA8;font-style:italic">frozen</span>
+<span style="color:#5C7681">: </span>
+<span style="color:#0B3F63;font-weight:700">Boolean</span>
+<span style="color:#5C7681"> = </span>
+<span style="color:#0777BF;font-weight:700">false</span>
+<span style="color:#5C7681">,</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#708fa3">10</span>
+<span style="color:#5C7681">) {</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#708fa3">11</span>
+<span style="color:#5c7a91;font-style:italic">    // freeze the whole ocean</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#708fa3">12</span>
+<span style="color:#0777BF;font-weight:700">    fun </span>
+<span style="color:#005EA8">freeze</span>
+<span style="color:#5C7681">(</span>
+<span style="color:#4A6572">level</span>
+<span style="color:#5C7681">: </span>
+<span style="color:#0B3F63;font-weight:700">Int</span>
+<span style="color:#5C7681"> = </span>
+<span style="color:#B2593B">3</span>
+<span style="color:#5C7681">)</span>
+<span style="color:#5C7681">: </span>
+<span style="color:#0B3F63;font-weight:700">Result</span>
+<span style="color:#5C7681">&lt;</span>
+<span style="color:#0B3F63;font-weight:700">List</span>
+<span style="color:#5C7681">&lt;</span>
+<span style="color:#0B3F63;font-weight:700">Ice</span>
+<span style="color:#5C7681">&gt;&gt;</span>
+<span style="color:#5C7681"> {</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#708fa3">13</span>
+<span style="color:#2A3B45;background:#FBF7FA">        </span>
+<span style="color:#005EA8">println</span>
+<span style="color:#5C7681">(</span>
+<span style="color:#1D8169">"[debug] level=</span>
+<span style="color:#B2593B">$level</span>
+<span style="color:#1D8169">"</span>
+<span style="color:#5C7681">)</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#708fa3">14</span>
+<span style="color:#0777BF;font-weight:700">        return </span>
+<span style="color:#33505F">world</span>
+<span style="color:#5C7681">.</span>
+<span style="color:#005EA8">apply</span>
+<span style="color:#5C7681"> { </span>
+<span style="color:#4A6572">temperature</span>
+<span style="color:#5C7681"> -= </span>
+<span style="color:#B2593B">40</span>
+<span style="color:#5C7681"> }</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#708fa3">15</span>
+<span style="color:#5C7681">    }</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#708fa3">16</span>
+<span style="color:#5C7681">}</span>
+</div>
+<div style="background:#F2EDF5;margin:0 -20px 0 0"><span class="ln" style="color:#0777BF">17</span>
+<span style="color:#0777BF;font-weight:700">    val </span>
+<span style="color:#D32F2F;font-weight:700" class="wavy">temperture</span>
+<span style="color:#5C7681"> = </span>
+<span style="color:#33505F">world</span>
+<span style="color:#5C7681">.</span>
+<span style="color:#4A6572">temperature</span>
+<span style="color:#5c7a91;font-style:italic">   // typo -&gt; error</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#708fa3">18</span>
+<span style="color:#0777BF;font-weight:700">    val </span>
+<span style="color:#A76200" class="wavy">magic</span>
+<span style="color:#5C7681"> = </span>
+<span style="color:#B2593B">42</span>
+<span style="color:#5c7a91;font-style:italic">   // magic number -&gt; warning</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#708fa3">19</span>
+<span style="color:#0777BF;font-weight:700">    val </span>
+<span style="background:#F7D9E4;color:#2A3B45">search</span>
+<span style="color:#5C7681"> = </span>
+<span style="color:#1D8169">"hit"</span>
+<span style="color:#5c7a91;font-style:italic">   // search match highlight</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#708fa3">20</span>
+<span style="color:#0777BF;font-weight:700">    val </span>
+<span style="background:#D6EBFA">picked</span>
+<span style="color:#5C7681"> = </span>
+<span style="color:#B2593B">1.5</span>
+<span style="color:#5c7a91;font-style:italic">   // selection</span>
+</div>
+</pre>
+<div class="sw">
+<span style="color:#0777BF;font-weight:700">keyword</span>
+<span style="color:#1D8169">string</span>
+<span style="color:#B2593B">number</span>
+<span style="color:#B2593B">constant</span>
+<span style="color:#005EA8">function</span>
+<span style="color:#0B3F63;font-weight:700">class_name</span>
+<span style="color:#AD5776">annotation</span>
+<span style="color:#33505F">local</span>
+<span style="color:#4A6572">parameter</span>
+<span style="color:#5c7a91;font-style:italic">comment</span>
+<span style="color:#4F7A99;font-style:italic">doc</span>
+<span style="color:#D32F2F;font-weight:700">error</span>
+<span style="color:#A76200">warning</span>
+<span style="color:#557c99">inlay</span>
+<span style="color:#ad5776;font-weight:700">todo</span>
+<span style="color:#0070C0">link</span>
+<span style="color:#5C7681">operator</span>
+</div></div>
+<h2>Hatsune Miku Dark &nbsp;<code>bg #0B1A2A</code> <span style="opacity:.6">parent Darcula</span></h2>
+<div class="panel" style="background:#0B1A2A"><pre>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#506d82">1</span>
+<span style="color:#6B93B0;font-style:italic">/**</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#506d82">2</span>
+<span style="color:#6B93B0;font-style:italic"> * </span>
+<span style="color:#6B93B0;font-style:italic">Model of the ice queen.</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#506d82">3</span>
+<span style="color:#6B93B0;font-style:italic"> * </span>
+<span style="color:#48C0F8;font-weight:700">@param</span>
+<span style="color:#6B93B0;font-style:italic"> name the character name</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#506d82">4</span>
+<span style="color:#6B93B0;font-style:italic"> */</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#506d82">5</span>
+<span style="color:#C8B0E8">@Serializable</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#506d82">6</span>
+<span style="color:#48C0F8;font-weight:700">data class </span>
+<span style="color:#C7E1F9;font-weight:700">SnowMiku</span>
+<span style="color:#6E90A8">(</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#506d82">7</span>
+<span style="color:#48C0F8;font-weight:700">    val </span>
+<span style="color:#9EBDD0">name</span>
+<span style="color:#6E90A8">: </span>
+<span style="color:#C7E1F9;font-weight:700">String</span>
+<span style="color:#6E90A8"> = </span>
+<span style="color:#F0B8CC">"Hatsune Miku"</span>
+<span style="color:#6E90A8">,</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#506d82">8</span>
+<span style="color:#48C0F8;font-weight:700">    val </span>
+<span style="color:#9EBDD0">age</span>
+<span style="color:#6E90A8">: </span>
+<span style="color:#C7E1F9;font-weight:700">Int</span>
+<span style="color:#6E90A8"> = </span>
+<span style="color:#A8E8F0">16</span>
+<span style="color:#6E90A8">,</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#506d82">9</span>
+<span style="color:#48C0F8;font-weight:700">    private var </span>
+<span style="color:#5FD0C0;font-style:italic">frozen</span>
+<span style="color:#6E90A8">: </span>
+<span style="color:#C7E1F9;font-weight:700">Boolean</span>
+<span style="color:#6E90A8"> = </span>
+<span style="color:#48C0F8;font-weight:700">false</span>
+<span style="color:#6E90A8">,</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#506d82">10</span>
+<span style="color:#6E90A8">) {</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#506d82">11</span>
+<span style="color:#6386a1;font-style:italic">    // freeze the whole ocean</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#506d82">12</span>
+<span style="color:#48C0F8;font-weight:700">    fun </span>
+<span style="color:#5FD0C0">freeze</span>
+<span style="color:#6E90A8">(</span>
+<span style="color:#7FA0B8">level</span>
+<span style="color:#6E90A8">: </span>
+<span style="color:#C7E1F9;font-weight:700">Int</span>
+<span style="color:#6E90A8"> = </span>
+<span style="color:#A8E8F0">3</span>
+<span style="color:#6E90A8">)</span>
+<span style="color:#6E90A8">: </span>
+<span style="color:#C7E1F9;font-weight:700">Result</span>
+<span style="color:#6E90A8">&lt;</span>
+<span style="color:#C7E1F9;font-weight:700">List</span>
+<span style="color:#6E90A8">&lt;</span>
+<span style="color:#C7E1F9;font-weight:700">Ice</span>
+<span style="color:#6E90A8">&gt;&gt;</span>
+<span style="color:#6E90A8"> {</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#506d82">13</span>
+<span style="color:#C0D6E4;background:#0B1A2A">        </span>
+<span style="color:#5FD0C0">println</span>
+<span style="color:#6E90A8">(</span>
+<span style="color:#F0B8CC">"[debug] level=</span>
+<span style="color:#A8E8F0">$level</span>
+<span style="color:#F0B8CC">"</span>
+<span style="color:#6E90A8">)</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#506d82">14</span>
+<span style="color:#48C0F8;font-weight:700">        return </span>
+<span style="color:#9EBDD0">world</span>
+<span style="color:#6E90A8">.</span>
+<span style="color:#5FD0C0">apply</span>
+<span style="color:#6E90A8"> { </span>
+<span style="color:#9EBDD0">temperature</span>
+<span style="color:#6E90A8"> -= </span>
+<span style="color:#A8E8F0">40</span>
+<span style="color:#6E90A8"> }</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#506d82">15</span>
+<span style="color:#6E90A8">    }</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#506d82">16</span>
+<span style="color:#6E90A8">}</span>
+</div>
+<div style="background:#12283C;margin:0 -20px 0 0"><span class="ln" style="color:#48C0F8">17</span>
+<span style="color:#48C0F8;font-weight:700">    val </span>
+<span style="color:#FF5F56;font-weight:700" class="wavy">temperture</span>
+<span style="color:#6E90A8"> = </span>
+<span style="color:#9EBDD0">world</span>
+<span style="color:#6E90A8">.</span>
+<span style="color:#9EBDD0">temperature</span>
+<span style="color:#6386a1;font-style:italic">   // typo -&gt; error</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#506d82">18</span>
+<span style="color:#48C0F8;font-weight:700">    val </span>
+<span style="color:#E8B84A" class="wavy">magic</span>
+<span style="color:#6E90A8"> = </span>
+<span style="color:#A8E8F0">42</span>
+<span style="color:#6386a1;font-style:italic">   // magic number -&gt; warning</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#506d82">19</span>
+<span style="color:#48C0F8;font-weight:700">    val </span>
+<span style="background:#3A9BD8;color:#0B1A2A">search</span>
+<span style="color:#6E90A8"> = </span>
+<span style="color:#F0B8CC">"hit"</span>
+<span style="color:#6386a1;font-style:italic">   // search match highlight</span>
+</div>
+<div style="margin:0 -20px 0 0"><span class="ln" style="color:#506d82">20</span>
+<span style="color:#48C0F8;font-weight:700">    val </span>
+<span style="background:#1B4A6E">picked</span>
+<span style="color:#6E90A8"> = </span>
+<span style="color:#A8E8F0">1.5</span>
+<span style="color:#6386a1;font-style:italic">   // selection</span>
+</div>
+</pre>
+<div class="sw">
+<span style="color:#48C0F8;font-weight:700">keyword</span>
+<span style="color:#F0B8CC">string</span>
+<span style="color:#A8E8F0">number</span>
+<span style="color:#A8E8F0">constant</span>
+<span style="color:#5FD0C0">function</span>
+<span style="color:#C7E1F9;font-weight:700">class_name</span>
+<span style="color:#C8B0E8">annotation</span>
+<span style="color:#9EBDD0">local</span>
+<span style="color:#7FA0B8">parameter</span>
+<span style="color:#6386a1;font-style:italic">comment</span>
+<span style="color:#6B93B0;font-style:italic">doc</span>
+<span style="color:#FF5F56;font-weight:700">error</span>
+<span style="color:#E8B84A">warning</span>
+<span style="color:#6587a2">inlay</span>
+<span style="color:#F0B8CC;font-weight:700">todo</span>
+<span style="color:#48C0F8">link</span>
+<span style="color:#6E90A8">operator</span>
+</div></div>
