@@ -23,6 +23,25 @@
 | `PALETTE.md` | — | 生成器输出的最终色值与实测对比度（勿手改） |
 | `SPEC.md` | — | 设计规格与决策记录 |
 
+## 预览
+
+下面是四套主题的**完整界面模拟**——项目树、标签页、工具栏、状态栏、弹窗、滚动条都在主题范围内
+（这正是只装 `.icls` 时看不到的那部分）：
+
+| | |
+|---|---|
+| **Kurumi Tokisaki Light**<br><img src="ui_preview_KurumiTokisakiLight.png" width="430" alt="Kurumi Tokisaki Light 界面"> | **Kurumi Tokisaki Dark**<br><img src="ui_preview_KurumiTokisakiDark.png" width="430" alt="Kurumi Tokisaki Dark 界面"> |
+| **Hatsune Miku Light**<br><img src="ui_preview_HatsuneMikuLight.png" width="430" alt="Hatsune Miku Light 界面"> | **Hatsune Miku Dark**<br><img src="ui_preview_HatsuneMikuDark.png" width="430" alt="Hatsune Miku Dark 界面"> |
+
+编辑器配色的代码实际渲染效果，四套叠放（2× 分辨率）：
+
+<img src="preview.png" width="620" alt="四套编辑器配色预览">
+
+单套高分辨率图：`preview_KurumiTokisakiLight.png`、`preview_KurumiTokisakiDark.png`、
+`preview_HatsuneMikuLight.png`、`preview_HatsuneMikuDark.png`；
+单套界面模拟：`ui_preview_*.png`；汇总图：`ui_preview.png`。
+另有一份可交互的 `preview.html`。
+
 ## 装哪个？——先弄清 `.icls` 的边界
 
 **`.icls` 只能改编辑器**：代码高亮、行号、光标行、控制台、diff、搜索结果。
